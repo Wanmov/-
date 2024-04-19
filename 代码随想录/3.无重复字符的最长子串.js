@@ -10,20 +10,17 @@
  * @return {number}
  */
 
-//暴力
+//哈希
 var lengthOfLongestSubstring = function (s) {
+  let hashMap = new Map();
   let longCount = 0;
-  for (let i = 0; i < s.length; i++) {
-    let curCount = 0;
-    let hash = new Set();
-    for (let j = i; j < s.length; j++) {
-      if (hash.has(s[j])) break;
-      else {
-        hash.add(s[j]);
-        curCount++;
-      }
-      longCount = Math.max(longCount, curCount);
+  let len = s.length;
+  for (let i = 0, j = 0; j < len; j++) {
+    if (hashMap.has(s[j])) {
+      i = Math.max(hashMap.get(s[j]) + 1, i);
     }
+    hashMap.set(s[j], j);
+    longCount = Math.max(longCount, j - i + 1);
   }
   return longCount;
 };
