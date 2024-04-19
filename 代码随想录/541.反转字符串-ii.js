@@ -14,7 +14,7 @@ var reverseStr = function (s, k) {
   let arr = s.split("");
   for (let i = 0; i < s.length; i += 2 * k) {
     let left = i;
-    let right = i + k - 1 >= s.length ? s.length - 1 : i + k - 1;
+    let right = i + k - 1 >= s.length-1 ? s.length - 1 : i + k - 1;
     while (left < right) {
       let temp = arr[left];
       arr[left] = arr[right];
