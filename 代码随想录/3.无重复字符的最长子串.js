@@ -10,7 +10,7 @@
  * @return {number}
  */
 
-//哈希
+//滑动窗口
 var lengthOfLongestSubstring = function (s) {
   let hashMap = new Map();
   let longCount = 0;
