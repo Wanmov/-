@@ -10,12 +10,11 @@
  * @return {number}
  */
 var maxSubArray = function (nums) {
-  let pre = 0;
-  let max_num = nums[0];
-  for (let x of nums) {
-    pre = Math.max(pre + x, x);
-    max_num = Math.max(max_num, pre);
+  for (let i = 0; i < nums.length; i++) {
+    if (i > 0 && nums[i - 1] > 0) {
+      nums[i] = nums[i] + nums[i - 1];
+    }
   }
-  return max_num;
+  return Math.max(...nums);
 };
 // @lc code=end
