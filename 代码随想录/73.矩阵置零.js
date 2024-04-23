@@ -21,7 +21,7 @@ var setZeroes = function (matrix) {
     if (matrix[0][j] === 0) flagRow0 = true;
   }
 
-  // 有零把对应的一行一列置为0
+  // 有零把对应的第一行第一列置为0标记
   for (let i = 1; i < m; i++) {
     for (let j = 1; j < n; j++) {
       if (matrix[i][j] === 0) {
